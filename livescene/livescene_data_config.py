@@ -1,0 +1,6 @@
+from nerfstudio.plugins.registry_dataparser import DataParserSpecification
+
+from livescene.datamanager.livescene_dataparser import LiveSceneRealDataParserConfig, LiveSceneSyntheticDataParserConfig
+
+livescene_real_data = DataParserSpecification(config=LiveSceneRealDataParserConfig())
+livescene_sim_data = DataParserSpecification(config=LiveSceneSyntheticDataParserConfig())
