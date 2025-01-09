@@ -1,0 +1,22 @@
+[project]
+name = "livescene"
+version = "0.1.0"
+description = "LiveScene: Language Embedding Interactive Radiance Fields for Physical Scene Rendering and Control."
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    { name = "Delin Qu", email = "delinqu.cs@gmail.com" },
+    { name = "Qizhi Chen", email = "tavish9.chen@gmail.com" },
+]
+
+dependencies = ["nerfstudio >= 1.1.4", "tyro<=0.9.2", "rasterio", "omegaconf", "clip", "open_clip_torch"] 
+
+[tool.setuptools.packages.find]
+include = ["livescene*"]
+
+[project.entry-points.'nerfstudio.method_configs']
+livescene = 'livescene.livescene_config:livescene_method'
+
+[project.entry-points.'nerfstudio.dataparser_configs']
+livescene-real-data = 'livescene.livescene_data_config:livescene_real_data'
+livescene-sim-data = 'livescene.livescene_data_config:livescene_sim_data'
